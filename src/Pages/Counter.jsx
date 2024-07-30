@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { SiPanasonic } from "react-icons/si";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from '../assets/logo.png'
 import { BsInfoCircle, BsUpload } from "react-icons/bs";
 
@@ -64,9 +64,17 @@ function Counter() {
               </div>
             </div>
             {/* input */}
-            <form className="w-[95%] max-w-[1000px] mx-auto h-full flex items-start justify-center">
+            <form className="w-[95%] max-w-[1000px] mx-auto h-full flex items-start justify-start flex-col">
               <textarea type="text" className="w-full h-[400px] bg-white rounded-xl p-10 text-lg resize-none custom-scrollbar" placeholder="Paste your text here.." />
+              <div className="flex items-center justify-start mt-5 gap-5">
+              <button className="h-[48px] min-w-[140px] rounded-xl text-base font-semibold px-5 bg-black text-white transition active:scale-95">Count</button>
+              <button type="reset" className="h-[48px] min-w-[140px] rounded-xl text-base font-semibold px-5 bg-stone-300/60 hover:bg-stone-400/70 transition active:scale-95 text-black">Clear</button>
+              </div>
             </form>
+            {/* footer */}
+            <div className="mt-5 text-sm py-3 text-black/40 flex items-center justify-center">
+            Countify does not store your data. By using this tool, you agree to our <Link to={'/'} className="hover:underline text-black/70 pl-1">Terms of Service</Link>
+            </div>
           </div>
 
         </div>
