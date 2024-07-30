@@ -26,8 +26,13 @@ function Counter() {
     setCounting(true)
     console.log(text)
     const words = await text.trim().split(/\s+/).length;
-    if(words){
+    const spaces = await (text.match(/\s/g) || []).length;
+    const lines = await (text.split(/\r?\n/)).length;
+    if(words && spaces && lines){
       setWordCount(words)
+      setCharacterCount(text.length)
+      setWhiteSpaceCount(spaces)
+      setLinesCount(lines)
     }
 
     setTimeout(() => {
