@@ -88,31 +88,31 @@ function Counter() {
             <div id="result-section" className=" scroll-m-[50px] w-[95%] max-w-[1000px] min-h-[70px] bg-white rounded-xl flex items-center justify-center py-4 px-10">
               <div className="w-full border-r-[1px] border-black/10 mr-7">
                 <h1> Words</h1>
-                <p>
+                <p className="text-xl">
                   {counting ? <span className="w-[80px] h-[24px] flex rounded-sm bg-gradient-to-tl from-stone-300/50 via-stone-200 to-stone-100 animate-pulse"></span> : <span>{wordCount}</span>}
                 </p>
               </div>
               <div className="w-full border-r-[1px] border-black/10 mr-7">
                 <h1> Characters</h1>
-                <p>
+                <p className="text-xl">
                   {counting ? <span className="w-[80px] h-[24px] flex rounded-sm bg-gradient-to-tl from-stone-300/50 via-stone-200 to-stone-100 animate-pulse"></span> : <span>{characterCount}</span>}
                 </p>
               </div>
               <div className="w-full border-r-[1px] border-black/10 mr-7">
                 <h1> Whitespaces</h1>
-                <p>
+                <p className="text-xl">
                   {counting ? <span className="w-[80px] h-[24px] flex rounded-sm bg-gradient-to-tl from-stone-300/50 via-stone-200 to-stone-100 animate-pulse"></span> : <span>{whiteSpaceCount}</span>}
                 </p>
               </div>
               <div className="w-full border-r-[1px] border-black/10 mr-7">
                 <h1> Sentences</h1>
-                <p>
+                <p className="text-xl">
                   {counting ? <span className="w-[80px] h-[24px] flex rounded-sm bg-gradient-to-tl from-stone-300/50 via-stone-200 to-stone-100 animate-pulse"></span> : <span>{sentencesCount}</span>}
                 </p>
               </div>
               <div className="w-full">
                 <h1> Lines</h1>
-                <p>
+                <p className="text-xl">
                   {counting ? <span className="w-[80px] h-[24px] flex rounded-sm bg-gradient-to-tl from-stone-300/50 via-stone-200 to-stone-100 animate-pulse"></span> : <span>{linesCount}</span>}
                 </p>
               </div>
