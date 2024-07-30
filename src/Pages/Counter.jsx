@@ -3,6 +3,7 @@ import { SiPanasonic } from "react-icons/si";
 import { Link, useLocation } from "react-router-dom";
 import logo from '../assets/logo.png'
 import { BsInfoCircle, BsUpload } from "react-icons/bs";
+import pdfToText from 'react-pdftotext'
 
 function Counter() {
   const [loading, setLoading] = useState(true);
@@ -20,6 +21,14 @@ function Counter() {
       setLoading(false)
     }, 1600);
   }, [location])
+
+  function extractText(event) {
+    const file = event.target.files[0]
+    pdfToText(file)
+      .then(text => setText(text))
+      .catch(error => console.error("Failed to extract text from pdf"))
+  }
+
 
   const submitText = (e) => {
     const resultSection = document.getElementById('result-section')
@@ -39,13 +48,14 @@ function Counter() {
     setSentencesCount(sentences)
 
     setTimeout(() => {
-    setCounting(false)
-    resultSection.scrollIntoView({ behavior: 'smooth' });
+      setCounting(false)
+      resultSection.scrollIntoView({ behavior: 'smooth' });
     }, 900);
 
   }
 
   const clearEverything = () => {
+    setText('')
     setWordCount(0)
     setCharacterCount(0)
     setWhiteSpaceCount(0)
@@ -53,6 +63,21 @@ function Counter() {
     setSentencesCount(0)
   }
 
+
+
+
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = async (event) => {
+        const pdfData = new Uint8Array(event.target.result);
+        await extractTextFromPDF(pdfData);
+      };
+      reader.readAsArrayBuffer(file);
+    }
+  };
   return (
     <>
       {loading &&
@@ -69,9 +94,10 @@ function Counter() {
               <p className="text-2xl font-semibold">Countify</p>
             </div>
             <div className="flex items-center justify-end gap-5">
-              <button className="text-xl cursor-pointer">
+              <input id="pdf-upload" hidden type="file" accept="application/pdf" onChange={extractText} />
+              <label htmlFor="pdf-upload" disabled={counting} className="text-xl cursor-pointer">
                 <BsUpload />
-              </button>
+              </label>
               <button className="text-xl cursor-pointer">
                 <BsInfoCircle />
               </button>
@@ -80,7 +106,7 @@ function Counter() {
           {/* hero */}
           <div className=" w-full h-fit flex flex-col items-center justify-start py-10 gap-3">
             <h1 className="text-4xl font-semibold max-w-[500px] text-center">Count Words Fast, Free, and Effortlessly.</h1>
-            <p className="text-base text-black/70 max-w-[400px] text-center">Copy and paste your text or paragraphs in the textbox bellow and click count button</p>
+            <p className="text-base text-black/70 max-w-[400px] text-center">Copy and paste your text/paragraphs in the textbox bellow or upload PDFs and click count button</p>
           </div>
           {/* input */}
           <div className="w-full h-fit flex flex-col gap-5 items-center justify-start">
@@ -119,7 +145,7 @@ function Counter() {
             </div>
             {/* input */}
             <form onSubmit={submitText} className="w-[95%] max-w-[1000px] mx-auto h-full flex items-start justify-start flex-col">
-              <textarea onChange={(e) => setText(e.target.value)} type="text" required className="w-full h-[400px] bg-white rounded-xl p-10 text-lg resize-none custom-scrollbar" placeholder="Paste your text here.." />
+              <textarea value={text} onChange={(e) => setText(e.target.value)} type="text" required className="w-full h-[400px] bg-white rounded-xl p-10 text-lg resize-none custom-scrollbar" placeholder="Paste your text here.." />
               <div className="flex items-center justify-start mt-5 gap-5">
                 <button type="submit" className="h-[48px] select-none min-w-[140px] rounded-xl text-base font-semibold px-5 bg-black text-white transition active:scale-95">
                   {counting ? (
