@@ -4,25 +4,38 @@ import { Link, useLocation } from "react-router-dom";
 import logo from '../assets/logo.png'
 import { BsInfoCircle, BsUpload } from 'react-icons/bs'
 import { FiArrowLeft } from "react-icons/fi";
+import { AiOutlineClose } from "react-icons/ai";
 
 function Terms() {
+    const [showinfo, setShowInfo] = useState(false)
     useEffect(() => {
         window.scrollTo(0, 0)
-    },[])
+    }, [])
     return (
         <div className="w-full h-svh flex flex-col items-start justify-start text-black">
+            {/* info fixed */}
+            <div className={` w-full h-svh bg-body/95 backdrop-blur-md py-5 px-10 fixed top-0 right-0 ${showinfo ? 'transition duration-300 z-10' : 'translate-y-20 -z-10 opacity-0 pointer-events-none'}`}>
+                <button onClick={() => setShowInfo(false)} className="absolute top-7 right-10 bg-stone-200 rounded-full p-2">
+                    <AiOutlineClose className="text-lg" />
+                </button>
+                <div className="flex-1 h-full flex-col flex items-center justify-center">
+                    <h2 className="text-lg">Countify</h2>
+                    <p className="text-sm font-normal text-black/50">Version 1.0 | © 2024 All Rights Reserved | Free to use | <Link to={`/app/terms of service`}>Terms of Use</Link></p>
+                    <p className="text-sm font-normal absolute bottom-4 text-black/50">Created By <a href="https://kevinmk.onrender.com/" target="_blank" className="text-black">Kevin MK.</a></p>
+                </div>
+            </div>
             {/* nav */}
-            <Link to="/app/counter" className="min-h-[60px] w-full flex items-center justify-between px-10 py-5">
-                <div className="flex items-center justify-start gap-1">
+            <div className="min-h-[60px] w-full flex items-center justify-between px-10 py-5">
+                <Link to="/app/counter" className="flex items-center justify-start gap-1">
                     <FiArrowLeft className="textlg" />
                     <p className="text-base font-normal">Go back</p>
-                </div>
+                </Link>
                 <div className="flex items-center justify-end gap-5">
-                    <button className="text-xl cursor-pointer">
+                    <button onClick={() => setShowInfo(true)} className="text-xl cursor-pointer">
                         <BsInfoCircle />
                     </button>
                 </div>
-            </Link>
+            </div>
             {/* Terms */}
             <div className="w-full h-fit mt-5 pb-20 font-normal flex flex-col items-start justify-start max-w-[800px] mx-auto p-4">
                 <h1 className="text-3xl font-semibold py-6">Terms of Use</h1>
