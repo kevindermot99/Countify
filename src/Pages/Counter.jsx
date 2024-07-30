@@ -42,6 +42,33 @@ function Counter() {
             <h1 className="text-4xl font-semibold max-w-[500px] text-center">Count Words Fast, Free, and Effortlessly.</h1>
             <p className="text-base text-black/70 max-w-[400px] text-center">Copy and paste your text or paragraphs in the textbox bellow and click count button</p>
           </div>
+          {/* input */}
+          <div className="w-full h-fit flex flex-col gap-5 items-center justify-start">
+            {/* resul */}
+            <div className="w-[95%] max-w-[1000px] min-h-[70px] bg-white rounded-xl flex items-center justify-center py-4 px-10">
+              <div className="w-full border-r-[1px] border-black/10 mr-7">
+                <h1> Words</h1>
+                <p>0</p>
+              </div>
+              <div className="w-full border-r-[1px] border-black/10 mr-7">
+                <h1> Characters</h1>
+                <p>0</p>
+              </div>
+              <div className="w-full border-r-[1px] border-black/10 mr-7">
+                <h1> Whitespaces</h1>
+                <p>0</p>
+              </div>
+              <div className="w-full">
+                <h1> Lines</h1>
+                <p>0</p>
+              </div>
+            </div>
+            {/* input */}
+            <form className="w-[95%] max-w-[1000px] mx-auto h-full flex items-start justify-center">
+              <textarea type="text" className="w-full h-[400px] bg-white rounded-xl" />
+            </form>
+          </div>
+
         </div>
       }
     </>
