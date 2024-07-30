@@ -65,7 +65,7 @@ function Counter() {
             </div>
             {/* input */}
             <form className="w-[95%] max-w-[1000px] mx-auto h-full flex items-start justify-center">
-              <textarea type="text" className="w-full h-[400px] bg-white rounded-xl" />
+              <textarea type="text" className="w-full h-[400px] bg-white rounded-xl p-10 text-lg resize-none custom-scrollbar" placeholder="Paste your text here.." />
             </form>
           </div>
 
