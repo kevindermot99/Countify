@@ -10,8 +10,8 @@ function App() {
     <>
       <HashRouter>
         <Routes>
-          <Route path={`/`} element={<Home />} />
-          <Route path={`/app/counter`} element={<Counter />} />
+          <Route path={`/`} element={<Counter />} />
+          {/* <Route path={`/app/counter`} element={<Counter />} /> */}
         </Routes>
       </HashRouter>
     </>

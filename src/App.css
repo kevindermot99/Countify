@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* loader */
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #333;
+  border-bottom-color: #aaaaaa67;
+  border-left-color: #aaaaaa67;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation .5s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
