@@ -12,6 +12,7 @@ function Counter() {
   const [characterCount, setCharacterCount] = useState(0)
   const [whiteSpaceCount, setWhiteSpaceCount] = useState(0)
   const [linesCount, setLinesCount] = useState(0)
+  const [sentencesCount, setSentencesCount] = useState(0)
   const [text, setText] = useState('')
 
   useEffect(() => {
@@ -25,20 +26,25 @@ function Counter() {
     e.preventDefault()
     setCounting(true)
     console.log(text)
+
     const words = await text.trim().split(/\s+/).length;
     const spaces = await (text.match(/\s/g) || []).length;
     const lines = await (text.split(/\r?\n/)).length;
-    if(words && spaces && lines){
+    const sentences = await (text.match(/(?:[.!?](?!\w))|(?:[.!?](?=\s))/g) || []).length;
+
+    if (words && spaces && lines) {
       setWordCount(words)
       setCharacterCount(text.length)
       setWhiteSpaceCount(spaces)
       setLinesCount(lines)
-    }
+      setSentencesCount(sentences)
 
-    setTimeout(() => {
-      setCounting(false)
-      resultSection.scrollIntoView({ behavior: 'smooth' });
-    }, 1000);
+      setTimeout(() => {
+        setCounting(false)
+        resultSection.scrollIntoView({ behavior: 'smooth' });
+      }, 900);
+
+    }
   }
   return (
     <>
@@ -89,6 +95,12 @@ function Counter() {
                 <h1> Whitespaces</h1>
                 <p>
                   {counting ? <span className="w-[80px] h-[24px] flex rounded-sm bg-gradient-to-tl from-stone-300/50 via-stone-200 to-stone-100 animate-pulse"></span> : <span>{whiteSpaceCount}</span>}
+                </p>
+              </div>
+              <div className="w-full border-r-[1px] border-black/10 mr-7">
+                <h1> Sentences</h1>
+                <p>
+                  {counting ? <span className="w-[80px] h-[24px] flex rounded-sm bg-gradient-to-tl from-stone-300/50 via-stone-200 to-stone-100 animate-pulse"></span> : <span>{sentencesCount}</span>}
                 </p>
               </div>
               <div className="w-full">
