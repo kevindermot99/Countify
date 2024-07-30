@@ -41,22 +41,40 @@ function Home() {
                     </div>
                 </div>
                 {/* visuals */}
-                <div className='w-full flex-1 flex items-center justify-between overflow-clip gap-10 pt-5 px-10 max-md:px-4 mt-5 z-20 max-w-[1500px] max-h-[550px] '>
-                    <div className='min-w-[500px] max-md:w-[300px] h-full flex flex-col items-start justify-center gap-5'>
-                        <h1 className='text-4xl font-medium'>Quick and free word counting for paragraphs, essays, and PDFs.</h1>
-                        <p className='font-light text-white/80'>Just paste your text or upload PDFs to get instant counts of words, characters, lines, sentences, and spaces. Quick and accurate results only!</p>
+                <div className='w-full flex-1 flex items-center justify-between flex-col overflow-clip gap-10 pt-5 px-10 max-md:px-4 mt-5 z-20 max-w-[1500px] '>
+                    <div className='min-w-[500px] max-md:w-[300px] h-full flex flex-col items-center justify-start gap-5 py-5'>
+                        <h1 className='text-4xl font-medium max-w-[650px] text-center'>Quick and free word counting for paragraphs, essays, and PDFs.</h1>
+                        <p className='font-light text-white/80 max-w-[650px] text-center'>Just paste your text or upload PDFs to get instant counts of words, characters, lines, sentences, and spaces. Quick and accurate results only!</p>
                         <Link to={`/app/counter`} type="reset" className="h-[44px] select-none min-w-[140px] rounded-xl text-base font-semibold px-5 flex items-center gap-2 bg-white transition active:scale-95 text-black">
                             Open Countify
                             <FiArrowRight className='text-xl' />
                         </Link>
                     </div>
-                    <img src={CounterScreen} className=" h-[550px] rounded-t-xl ring-[10px] ring-stone-100/10" />
+                    <img src={CounterScreen} className=" max-w-[900px] rounded-t-xl ring-[8px] ring-stone-400/15" />
                 </div>
             </div>
             {/* features */}
-            <div className='w-full h-fit min-h-[400px] bg-stone-500/5 flex flex-col items-center justify-start py-20'>
-                <h1 className='text-3xl font-medium max-w-[440px] text-center'>Top Features You’ll get</h1>
-                
+            <div className='w-full h-fit min-h-[400px] bg-white text-black flex items-center justify-center py-20 px-20 max-md:px-4'>
+                <div className=' w-1/2 flex flex-col items-start justify-start gap-2'>
+                    <h1 className='text-sm font-medium max-w-[540px] opacity-70 '>Key Features</h1>
+                    <h1 className='text-3xl font-medium max-w-[540px] '>All-in-One Counting: Words, Characters, Lines, Sentences, and Whitespaces</h1>
+                    <h1 className='text-base font-medium max-w-[540px] opacity-70 pt-3 '>Easily get comprehensive counts for your text with our all-in-one tool. Perfect for analyzing paragraphs, essays, and more.</h1>
+                </div>
+                <div className='w-1/2 flex items-start justify-center flex-col gap-2'>
+                    <div className='p-3 rounded-2xl border-dashed border-[1px] border-stone-500 flex items-start justify-start gap-3'>
+                        <img src="https://img.icons8.com/?size=64&id=iUA0LgO8nd9m&format=png" className="h-11" />
+                        <p className=''>PDF Scan - PDF-to-Text: Turn your PDFs into editable text in a snap, making counting and analysis a Easy.</p>
+                    </div>
+                    <div className='p-3 rounded-2xl border-dashed border-[1px] border-stone-500 flex items-start justify-start gap-3'>
+                        <img src="https://img.icons8.com/?size=64&id=iUA0LgO8nd9m&format=png" className="h-11" />
+                        <p className=''>History Tracker: With Countify, you gain access to a comprehensive history of your counts, making it simple to revisit and review past analyses with ease. <br /><br />Countify doesn't store personal information, and you don't need an account to start counting.</p>
+                    </div>
+                    <div className='p-3 rounded-2xl border-dashed border-[1px] border-stone-500 flex items-start justify-start gap-3'>
+                        <img src="https://img.icons8.com/?size=64&id=iUA0LgO8nd9m&format=png" className="h-11" />
+                        <p className=''>PDF Scan - PDF-to-Text: Turn your PDFs into editable text in a snap, making counting and analysis a Easy.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     )
