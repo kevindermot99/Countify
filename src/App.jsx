@@ -11,7 +11,7 @@ function App() {
     <>
       <HashRouter>
         <Routes>
-          <Route path={`/`} element={<Counter />} />
+          <Route path={`/`} element={<Home />} />
           <Route path={`/app/counter`} element={<Counter />} />
           <Route path={`/app/terms of service`} element={<Terms />} />
         </Routes>

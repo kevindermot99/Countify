@@ -101,10 +101,10 @@ function Counter() {
 
           {/* nav */}
           <div className="min-h-[60px] w-full flex items-center justify-between px-10 py-5">
-            <div className="flex items-center justify-start gap-1">
+            <Link to={`/`} className="flex items-center justify-start gap-1">
               <img src={logo} className="h-9" />
               <p className="text-2xl font-semibold">Countify</p>
-            </div>
+            </Link>
             <div className="flex items-center justify-end gap-5">
               <input id="pdf-upload" hidden type="file" accept="application/pdf" onChange={extractText} />
               <label htmlFor="pdf-upload" disabled={counting} className="text-sm flex items-center gap-1 py-1 rounded-md px-3 bg-stone-200 cursor-pointer transition active:scale-90">
