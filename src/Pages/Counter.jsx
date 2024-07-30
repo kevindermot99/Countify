@@ -21,31 +21,38 @@ function Counter() {
     }, 1600);
   }, [location])
 
-  const submitText = async (e) => {
+  const submitText = (e) => {
     const resultSection = document.getElementById('result-section')
     e.preventDefault()
     setCounting(true)
     console.log(text)
 
-    const words = await text.trim().split(/\s+/).length;
-    const spaces = await (text.match(/\s/g) || []).length;
-    const lines = await (text.split(/\r?\n/)).length;
-    const sentences = await (text.match(/(?:[.!?](?!\w))|(?:[.!?](?=\s))/g) || []).length;
+    const words = text.trim().split(/\s+/).length;
+    const spaces = (text.match(/\s/g) || []).length;
+    const lines = (text.split(/\r?\n/)).length;
+    const sentences = (text.match(/(?:[.!?](?!\w))|(?:[.!?](?=\s))/g) || []).length;
 
-    if (words && spaces && lines) {
-      setWordCount(words)
-      setCharacterCount(text.length)
-      setWhiteSpaceCount(spaces)
-      setLinesCount(lines)
-      setSentencesCount(sentences)
+    setWordCount(words)
+    setCharacterCount(text.length)
+    setWhiteSpaceCount(spaces)
+    setLinesCount(lines)
+    setSentencesCount(sentences)
 
-      setTimeout(() => {
-        setCounting(false)
-        resultSection.scrollIntoView({ behavior: 'smooth' });
-      }, 900);
+    setTimeout(() => {
+    setCounting(false)
+    resultSection.scrollIntoView({ behavior: 'smooth' });
+    }, 900);
 
-    }
   }
+
+  const clearEverything = () => {
+    setWordCount(0)
+    setCharacterCount(0)
+    setWhiteSpaceCount(0)
+    setLinesCount(0)
+    setSentencesCount(0)
+  }
+
   return (
     <>
       {loading &&
@@ -124,7 +131,7 @@ function Counter() {
                     <p>Count</p>
                   )}
                 </button>
-                <button type="reset" className="h-[48px] select-none min-w-[140px] rounded-xl text-base font-semibold px-5 bg-stone-300/60 hover:bg-stone-400/70 transition active:scale-95 text-black">
+                <button onClick={clearEverything} type="reset" className="h-[48px] select-none min-w-[140px] rounded-xl text-base font-semibold px-5 bg-stone-300/60 hover:bg-stone-400/70 transition active:scale-95 text-black">
                   Clear
                 </button>
               </div>
