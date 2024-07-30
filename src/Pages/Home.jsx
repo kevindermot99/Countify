@@ -56,22 +56,22 @@ function Home() {
             {/* features */}
             <div className='w-full h-fit min-h-[400px] bg-white text-black flex items-center justify-center py-20 px-20 max-md:px-4'>
                 <div className=' w-1/2 flex flex-col items-start justify-start gap-2'>
-                    <h1 className='text-sm font-medium max-w-[540px] opacity-70 '>Key Features</h1>
-                    <h1 className='text-3xl font-medium max-w-[540px] '>All-in-One Counting: Words, Characters, Lines, Sentences, and Whitespaces</h1>
-                    <h1 className='text-base font-medium max-w-[540px] opacity-70 pt-3 '>Easily get comprehensive counts for your text with our all-in-one tool. Perfect for analyzing paragraphs, essays, and more.</h1>
+                    <h1 className='text-sm font-normal max-w-[540px] opacity-70 '>Key Features</h1>
+                    <h1 className='text-3xl font-medium max-w-[540px] '>All-in-One Counting: Words, Characters, Lines, Sentences, and Whitespaces, all for free.</h1>
+                    <h1 className='text-base font-normal max-w-[540px] opacity-70 pt-3 '>Easily get comprehensive counts for your text with our all-in-one tool. Perfect for analyzing paragraphs, essays, and more.</h1>
                 </div>
                 <div className='w-1/2 flex items-start justify-center flex-col gap-2'>
-                    <div className='p-3 rounded-2xl border-dashed border-[1px] border-stone-500 flex items-start justify-start gap-3'>
+                    <div className='p-3 rounded-2xl border-dashed border-[1px] border-stone-200 flex items-start justify-start gap-3'>
                         <img src="https://img.icons8.com/?size=64&id=iUA0LgO8nd9m&format=png" className="h-11" />
-                        <p className=''>PDF Scan - PDF-to-Text: Turn your PDFs into editable text in a snap, making counting and analysis a Easy.</p>
+                        <p className='text-black/70'><span className='text-black'>PDF Scan - PDF-to-Text:</span> Turn your PDFs into editable text in a snap, making counting and analysis a Easy.</p>
                     </div>
-                    <div className='p-3 rounded-2xl border-dashed border-[1px] border-stone-500 flex items-start justify-start gap-3'>
-                        <img src="https://img.icons8.com/?size=64&id=iUA0LgO8nd9m&format=png" className="h-11" />
-                        <p className=''>History Tracker: With Countify, you gain access to a comprehensive history of your counts, making it simple to revisit and review past analyses with ease. <br /><br />Countify doesn't store personal information, and you don't need an account to start counting.</p>
+                    <div className='p-3 rounded-2xl border-dashed border-[1px] border-stone-200 flex items-start justify-start gap-3'>
+                        <img src="https://img.icons8.com/?size=100&id=10058&format=png" className="h-8 pl-2 pr-1" />
+                        <p className='text-black/70'><span className='text-black'>History Tracker:</span> With Countify, you gain access to a comprehensive history of your counts, making it simple to revisit and review past analyses with ease. <br /><br />Countify doesn't store personal information, and you don't need an account to start counting.</p>
                     </div>
-                    <div className='p-3 rounded-2xl border-dashed border-[1px] border-stone-500 flex items-start justify-start gap-3'>
-                        <img src="https://img.icons8.com/?size=64&id=iUA0LgO8nd9m&format=png" className="h-11" />
-                        <p className=''>PDF Scan - PDF-to-Text: Turn your PDFs into editable text in a snap, making counting and analysis a Easy.</p>
+                    <div className='p-3 rounded-2xl border-dashed border-[1px] border-stone-200 flex items-start justify-start gap-3'>
+                        <img src="https://img.icons8.com/?size=64&id=gfTAzJClXJbX&format=png" className="h-11" />
+                        <p className='text-black/70'><span className='text-black'>Free Forever:</span> Enjoy unlimited access to all our features without any cost. Count words, characters, lines, sentences, and more, all at no charge!</p>
                     </div>
                 </div>
 
