@@ -8,12 +8,7 @@ export default {
       },
       colors: {
         "main-color": "#648DE5",
-        "body-color-light": "#ffffff",
-        "body-color-dark": "#121212",
-        "border-lines-light": "#e1e1e1",
-        "border-lines-dark": "#1D1D1D",
-        "dark-text": "#2F333C",
-        "light-text": "#7d7d7d",
+        "body": "#f4f4f9",
       },
     },
   },

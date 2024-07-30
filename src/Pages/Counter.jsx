@@ -4,6 +4,9 @@ import { Link, useLocation } from "react-router-dom";
 import logo from '../assets/logo.png'
 import { BsInfoCircle, BsUpload } from "react-icons/bs";
 import pdfToText from 'react-pdftotext'
+import { LuUpload } from "react-icons/lu";
+import { MdOutlineFileUpload } from "react-icons/md";
+import { AiOutlineClose } from "react-icons/ai";
 
 function Counter() {
   const [loading, setLoading] = useState(true);
@@ -15,6 +18,7 @@ function Counter() {
   const [linesCount, setLinesCount] = useState(0)
   const [sentencesCount, setSentencesCount] = useState(0)
   const [text, setText] = useState('')
+  const [showinfo, setShowInfo] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
@@ -63,10 +67,6 @@ function Counter() {
     setSentencesCount(0)
   }
 
-
-
-
-
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -86,7 +86,19 @@ function Counter() {
         </div>
       }
       {!loading &&
-        <div className="w-full h-svh flex flex-col items-start justify-start text-black">
+        <div className="w-full h-svh flex flex-col items-start justify-start text-black relative">
+          {/* info fixed */}
+          <div className={` w-full h-svh bg-body/95 backdrop-blur-md py-5 px-10 fixed top-0 right-0 ${showinfo ? 'transition duration-300 z-10' : 'translate-y-20 -z-10 opacity-0 pointer-events-none'}`}>
+            <button onClick={() => setShowInfo(false)} className="absolute top-7 right-10 bg-stone-200 rounded-full p-2">
+              <AiOutlineClose className="text-lg" />
+            </button>
+            <div className="flex-1 h-full flex-col flex items-center justify-center">
+              <h2 className="text-lg">Countify</h2>
+              <p className="text-sm font-normal text-black/50">Version 1.0 | © 2024 All Rights Reserved | Free to use | <Link to={`/app/terms of service`}>Terms of Use</Link></p>
+              <p className="text-sm font-normal absolute bottom-4 text-black/50">Created By <a href="https://kevinmk.onrender.com/" target="_blank" className="text-black">Kevin MK.</a></p>
+            </div>
+          </div>
+
           {/* nav */}
           <div className="min-h-[60px] w-full flex items-center justify-between px-10 py-5">
             <div className="flex items-center justify-start gap-1">
@@ -95,10 +107,11 @@ function Counter() {
             </div>
             <div className="flex items-center justify-end gap-5">
               <input id="pdf-upload" hidden type="file" accept="application/pdf" onChange={extractText} />
-              <label htmlFor="pdf-upload" disabled={counting} className="text-xl cursor-pointer">
-                <BsUpload />
+              <label htmlFor="pdf-upload" disabled={counting} className="text-sm flex items-center gap-1 py-1 rounded-md px-3 bg-stone-200 cursor-pointer transition active:scale-90">
+                <MdOutlineFileUpload className="text-2xl opacity-30" />
+                <p>Upload PDF</p>
               </label>
-              <button className="text-xl cursor-pointer">
+              <button onClick={() => setShowInfo(true)} className="text-xl cursor-pointer">
                 <BsInfoCircle />
               </button>
             </div>
