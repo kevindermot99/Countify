@@ -72,7 +72,7 @@ function Home() {
                 </div>
                 {/* visuals */}
                 <Reveal triggerOnce keyframes={customAnimation} className='w-full'>
-                    <div className='w-full flex-1 flex items-center justify-between flex-col overflow-clip gap-10 pt-5 px-10 max-md:px-4 mt-5 z-20 max-w-[1500px] '>
+                    <div className='w-full flex-1 flex items-center justify-between flex-col overflow-clip gap-10 pt-5 px-10 max-md:px-4 mt-5 z-20 max-w-[1500px] min-h-svh '>
                         <div className='min-w-[500px] max-md:min-w-fit h-full flex flex-col items-center justify-start gap-5 py-5'>
                             <h1 className='text-4xl max-md:text-3xl font-medium max-w-[650px] text-center'>Quick and free word counting for paragraphs, essays, and PDFs.</h1>
                             <p className='font-light text-white/80 max-w-[650px] text-center max-md:text-sm'>Just paste your text or upload PDFs to get instant counts of words, characters, lines, sentences, and spaces. Quick and accurate results only!</p>
@@ -82,11 +82,13 @@ function Home() {
                             </Link>
                         </div>
                         {/* Pc */}
-                        <div className='max-md:hidden w-[860px] h-[580px] max-md:h-fit bg-stone-100 rounded-t-2xl pt-3 ring-[8px] ring-stone-400/15'>
+                        <div className='max-md:hidden max-w-[860px] h-[580px] max-md:h-fit bg-stone-100 rounded-t-2xl pt-3 ring-[8px] ring-stone-400/15'>
                             <img loading='lazy' src={CounterScreen} className=" object-cover object-top w-full h-full" />
                         </div>
                         {/* mobile */}
-                        <img loading='lazy' src={CounterScreenMobile} className=" hidden max-md:flex object-cover object-top" />
+                        <div className=''>
+                            <img loading='lazy' src={CounterScreenMobile} className=" hidden max-md:flex object-cover object-top" />
+                        </div>
                     </div>
                 </Reveal>
             </div>
