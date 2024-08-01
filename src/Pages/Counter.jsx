@@ -31,6 +31,8 @@ function Counter() {
     pdfToText(file)
       .then(text => setText(text))
       .catch(error => console.error("Failed to extract text from pdf"))
+
+      // console.log(text)
   }
 
 

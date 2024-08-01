@@ -12,7 +12,7 @@ function Home() {
             {/* hero */}
             <div className="flex items-center justify-start flex-col bg-black text-white relative w-full h-fit">
                 {/* light */}
-                <div className='absolute top-[-200px] left-[-200px] aspect-square z-10 h-[600px] w-[600px] bg-stone-500/25 rounded-full blur-[130px] '></div>
+                <div className='absolute top-[-200px] left-[-200px] aspect-square z-10 h-[800px] w-[600px] bg-stone-500/45 rounded-full blur-[130px] '></div>
                 {/* nav */}
                 <div className="min-h-[60px] w-full flex items-center justify-between px-10 py-5 z-20 ">
                     <Link to={`/`} className="flex items-center justify-start gap-1">
@@ -50,7 +50,7 @@ function Home() {
                             <FiArrowRight className='text-xl' />
                         </Link>
                     </div>
-                    <img src={CounterScreen} className=" max-w-[900px] rounded-t-xl ring-[8px] ring-stone-400/15" />
+                    <img src={CounterScreen} className=" max-w-[900px] min-w-[900px] max-md:min-w-[200px] min-h-[500px] bg-white rounded-t-xl ring-[8px] ring-stone-400/15" />
                 </div>
             </div>
             {/* features */}
