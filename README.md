@@ -24,10 +24,6 @@ Welcome to Countify! This project provides a straightforward, free tool for coun
 
 We welcome contributions! If you have ideas or improvements, feel free to submit a pull request or open an issue.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
 
 Enjoy using Countify for all your counting needs!
