@@ -89,14 +89,14 @@ function Home() {
             </div>
 
             {/* Faqs */}
-            <div id='faqs' className="w-full h-fit flex items-center py-10 justify-start flex-col bg-stone-100 text-black">
+            <div id='faqs' className="w-full h-fit flex items-center pt-10 justify-start flex-col bg-stone-100 text-black">
                 <div className=' w-1/2 flex flex-col items-center text-center justify-start gap-0 pb-10'>
                     <h1 className='text-sm font-normal max-w-[540px] opacity-70'>FAQs</h1>
                     <h1 className='text-3xl font-medium max-w-[540px]'>Common Questions</h1>
                     <h1 className='text-base font-normal max-w-[540px] opacity-70 pt-1'>If you cannot find the information you are looking for, please contact us for further assistance.</h1>
                 </div>
                 {/* Faqs */}
-                <div className="w-full h-full bg-stone-100 px-10 max-md:px-3 pb-16 flex flex-col items-center justify-start text-dark-text ">
+                <div className="w-full h-full bg-stone-100 px-10 max-md:px-3 pb-5 flex flex-col items-center justify-start text-dark-text ">
                     <div className="w-full h-fit flex flex-col items-center justify-start mb-3 max-w-[900px]">
                         {Faqs.map((item, index) => (
                             <div
@@ -124,6 +124,11 @@ function Home() {
                         ))}
                     </div>
                 </div>
+            </div>
+
+            {/* footer */}
+            <div className="w-full text-sm py-3 bg-stone-100 text-black/40 flex items-center justify-center">
+              Countify does not store your data. By using this tool, you agree to our <Link to={'/app/terms of service'} className="hover:underline text-black/70 pl-1">Terms of Service</Link>
             </div>
         </div>
     )
