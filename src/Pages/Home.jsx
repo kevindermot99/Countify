@@ -46,7 +46,7 @@ function Home() {
                 {/* nav */}
                 <div className="min-h-[60px] w-full flex items-center justify-between px-10 max-md:px-4 py-5 z-20 ">
                     <Link to={`/`} className="flex items-center justify-start gap-1">
-                        <img src={logo} className="h-9" />
+                        <img loading='lazy' src={logo} className="h-9" />
                         <p className="text-2xl font-semibold max-md:text-xl">Countify</p>
                     </Link>
                     <div className="flex items-center justify-end gap-8 max max-md:hidden">
@@ -80,9 +80,9 @@ function Home() {
                             </Link>
                         </div>
                         {/* Pc */}
-                        <img src={CounterScreen} className=" max-md:hidden w-[860px] h-[580px] max-md:h-fit object-cover object-top bg-stone-100 rounded-t-2xl pt-3 ring-[8px] ring-stone-400/15" />
+                        <img loading='lazy' src={CounterScreen} className=" max-md:hidden w-[860px] h-[580px] max-md:h-fit object-cover object-top bg-stone-100 rounded-t-2xl pt-3 ring-[8px] ring-stone-400/15" />
                         {/* mobile */}
-                        <img src={CounterScreenMobile} className=" hidden max-md:flex object-cover object-top" />
+                        <img loading='lazy' src={CounterScreenMobile} className=" hidden max-md:flex object-cover object-top" />
                     </div>
                 </Reveal>
             </div>
