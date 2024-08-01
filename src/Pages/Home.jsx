@@ -13,11 +13,17 @@ function Home() {
     const toggleAnswer = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
+    const scrollToFeatures = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
         <div className="w-full h-fit flex flex-col items-start justify-start relative text-white bg-black">
             {/* hero */}
-            <div className="flex items-center justify-start flex-col bg-black text-white relative w-full h-fit">
+            <div id='hero' className="flex items-center justify-start flex-col bg-black text-white relative w-full h-fit">
                 {/* light */}
                 <div className='absolute top-[-200px] left-[-200px] aspect-square z-10 h-[800px] w-[600px] bg-stone-500/45 rounded-full blur-[130px] '></div>
                 {/* nav */}
@@ -27,13 +33,13 @@ function Home() {
                         <p className="text-2xl font-semibold">Countify</p>
                     </Link>
                     <div className="flex items-center justify-end gap-8">
-                        <button className="h-fit select-none rounded-xl text-sm font-normal">
+                        <button onClick={() => scrollToFeatures('hero')} className="h-fit select-none rounded-xl text-sm font-normal">
                             Home
                         </button>
-                        <button className="h-fit select-none rounded-xl text-sm font-normal">
+                        <button onClick={() => scrollToFeatures('features')} className="h-fit select-none rounded-xl text-sm font-normal">
                             Features
                         </button>
-                        <button className="h-fit select-none rounded-xl text-sm font-normal">
+                        <button onClick={() => scrollToFeatures('faqs')} className="h-fit select-none rounded-xl text-sm font-normal">
                             FAQs
                         </button>
                     </div>
@@ -58,7 +64,7 @@ function Home() {
                 </div>
             </div>
             {/* features */}
-            <div className='w-full h-fit min-h-[400px] bg-white text-black flex items-center justify-center py-20 px-20 max-md:px-4'>
+            <div id='features' className='w-full h-fit min-h-[400px] bg-white text-black flex items-center justify-center py-20 px-20 max-md:px-4'>
                 <div className=' w-1/2 flex flex-col items-start justify-start gap-2'>
                     <h1 className='text-sm font-normal max-w-[540px] opacity-70 '>Key Features</h1>
                     <h1 className='text-3xl font-medium max-w-[540px] '>All-in-One Counting: Words, Characters, Lines, Sentences, and Whitespaces, all for free.</h1>
@@ -82,7 +88,7 @@ function Home() {
             </div>
 
             {/* Faqs */}
-            <div className="w-full h-fit flex items-center py-10 justify-start flex-col bg-stone-100 text-black">
+            <div id='faqs' className="w-full h-fit flex items-center py-10 justify-start flex-col bg-stone-100 text-black">
                 <div className=' w-1/2 flex flex-col items-center text-center justify-start gap-0 pb-10'>
                     <h1 className='text-sm font-normal max-w-[540px] opacity-70'>FAQs</h1>
                     <h1 className='text-3xl font-medium max-w-[540px]'>Common Questions</h1>
@@ -93,7 +99,7 @@ function Home() {
                     <div className="w-full h-fit flex flex-col items-center justify-start mb-3 max-w-[900px]">
                         {Faqs.map((item, index) => (
                             <div
-                                key={item.index}
+                                key={index}
                                 className=" py-4 px-5 bg-white text-dark-body-color rounded-xl w-full mb-2 flex justify-between items-start gap-5"
                             >
                                 <div className="flex flex-col items-start justify-start">
