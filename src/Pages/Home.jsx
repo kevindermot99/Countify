@@ -50,7 +50,7 @@ function Home() {
                             <FiArrowRight className='text-xl' />
                         </Link>
                     </div>
-                    <img src={CounterScreen} className=" max-w-[900px] min-w-[900px] max-md:min-w-[200px] min-h-[500px] bg-white rounded-t-xl ring-[8px] ring-stone-400/15" />
+                    <img src={CounterScreen} className=" max-w-[900px] min-w-[900px] max-md:min-w-[200px] min-h-[500px] object-cover object-top bg-white rounded-t-xl ring-[8px] ring-stone-400/15" />
                 </div>
             </div>
             {/* features */}
