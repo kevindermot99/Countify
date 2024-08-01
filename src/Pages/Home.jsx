@@ -80,7 +80,7 @@ function Home() {
                             </Link>
                         </div>
                         {/* Pc */}
-                        <img src={CounterScreen} className=" max-md:hidden w-[900px] max-h-[580px] min-h-[500px] max-md:min-h-fit object-cover object-top bg-stone-100 rounded-t-2xl pt-3 ring-[8px] ring-stone-400/15" />
+                        <img src={CounterScreen} className=" max-md:hidden w-[860px] h-[580px] max-md:h-fit object-cover object-top bg-stone-100 rounded-t-2xl pt-3 ring-[8px] ring-stone-400/15" />
                         {/* mobile */}
                         <img src={CounterScreenMobile} className=" hidden max-md:flex object-cover object-top" />
                     </div>
