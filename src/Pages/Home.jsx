@@ -82,7 +82,7 @@ function Home() {
                             </Link>
                         </div>
                         {/* Pc */}
-                        <div className='max-md:hidden max-w-[860px] h-[580px] max-md:h-fit bg-stone-100 rounded-t-2xl pt-3 ring-[8px] ring-stone-400/15'>
+                        <div className='max-md:hidden max-w-[860px] w-full h-[580px] max-md:h-fit bg-stone-100 rounded-t-2xl pt-3 ring-[8px] ring-stone-400/15'>
                             <img loading='lazy' src={CounterScreen} className=" object-cover object-top w-full h-full" />
                         </div>
                         {/* mobile */}
