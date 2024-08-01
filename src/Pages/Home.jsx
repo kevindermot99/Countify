@@ -42,6 +42,7 @@ function Home() {
                         <button onClick={() => scrollToFeatures('faqs')} className="h-fit select-none rounded-xl text-sm font-normal">
                             FAQs
                         </button>
+                        <a className="h-fit select-none rounded-xl text-sm font-normal" target='_blank' href="https://docs.google.com/forms/d/e/1FAIpQLSdkHgxQlSd-Y9M7GHH_QSyhRhkBgy6zzWcKK7VdSC53r9vaVA/viewform?usp=pp_url">Support</a>
                     </div>
                     <div className="flex items-center justify-end gap-5">
                         <Link to={'/app/counter'} className="h-fit select-none min-w-[100px] rounded-xl text-base font-medium px-5 flex items-center gap-1 transition active:scale-95">
