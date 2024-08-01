@@ -180,7 +180,7 @@ function Counter() {
             
           </div>
           {/* footer */}
-          <div className="mt-5 text-sm py-3 text-black/40 flex items-center justify-center flex-wrap text-center px-4 max-md:mt-0">
+          <div className="mt-5 w-full text-sm py-9 text-black/40 flex items-center justify-center flex-wrap text-center px-4 max-md:mt-0">
               Countify does not store your data. By using this tool, you agree to our <Link to={'/app/terms of service'} className="hover:underline text-black/70 pl-1">Terms of Service</Link>
             </div>
         </div>
