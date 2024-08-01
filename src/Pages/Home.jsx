@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BsInfoCircle } from 'react-icons/bs'
 import { MdOutlineFileUpload } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import CounterScreen from '../assets/countify-counter.png'
 import { FiArrowRight } from "react-icons/fi";
+import { FaCaretDown } from "react-icons/fa6";
+import { Faqs } from '../content/data'
 
 function Home() {
+    const [activeIndex, setActiveIndex] = useState(null);
+    const toggleAnswer = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
     return (
         <div className="w-full h-fit flex flex-col items-start justify-start relative text-white bg-black">
             {/* hero */}
@@ -25,9 +32,6 @@ function Home() {
                         </button>
                         <button className="h-fit select-none rounded-xl text-sm font-normal">
                             Features
-                        </button>
-                        <button className="h-fit select-none rounded-xl text-sm font-normal">
-                            Reach out
                         </button>
                         <button className="h-fit select-none rounded-xl text-sm font-normal">
                             FAQs
@@ -61,20 +65,58 @@ function Home() {
                     <h1 className='text-base font-normal max-w-[540px] opacity-70 pt-3 '>Easily get comprehensive counts for your text with our all-in-one tool. Perfect for analyzing paragraphs, essays, and more.</h1>
                 </div>
                 <div className='w-1/2 flex items-start justify-center flex-col gap-2'>
-                    <div className='p-3 rounded-2xl border-dashed border-[1px] border-stone-200 flex items-start justify-start gap-3'>
+                    <div className='p-3 rounded-2xl bg-stone-100 flex items-start justify-start gap-3'>
                         <img src="https://img.icons8.com/?size=64&id=iUA0LgO8nd9m&format=png" className="h-11" />
                         <p className='text-black/70'><span className='text-black'>PDF Scan - PDF-to-Text:</span> Turn your PDFs into editable text in a snap, making counting and analysis a Easy.</p>
                     </div>
-                    <div className='p-3 rounded-2xl border-dashed border-[1px] border-stone-200 flex items-start justify-start gap-3'>
-                        <img src="https://img.icons8.com/?size=100&id=10058&format=png" className="h-8 pl-2 pr-1" />
-                        <p className='text-black/70'><span className='text-black'>History Tracker:</span> With Countify, you gain access to a comprehensive history of your counts, making it simple to revisit and review past analyses with ease. <br /><br />Countify doesn't store personal information, and you don't need an account to start counting.</p>
-                    </div>
-                    <div className='p-3 rounded-2xl border-dashed border-[1px] border-stone-200 flex items-start justify-start gap-3'>
+                    <div className='p-3 rounded-2xl bg-stone-100 flex items-start justify-start gap-3'>
                         <img src="https://img.icons8.com/?size=64&id=gfTAzJClXJbX&format=png" className="h-11" />
                         <p className='text-black/70'><span className='text-black'>Free Forever:</span> Enjoy unlimited access to all our features without any cost. Count words, characters, lines, sentences, and more, all at no charge!</p>
                     </div>
-                </div>
+                    <div className='p-3 rounded-2xl bg-stone-100 flex items-start justify-start gap-3'>
+                        <img src="https://img.icons8.com/?size=100&id=10058&format=png" className="h-8 pl-2 pr-1" />
+                        <p className='text-black/70'><span className='text-black'>History Tracker:</span> With Countify, you gain access to a comprehensive history of your counts, making it simple to revisit and review past analyses with ease. <br /><br />Countify doesn't store personal information, and you don't need an account to start counting.</p>
+                    </div>
 
+                </div>
+            </div>
+
+            {/* Faqs */}
+            <div className="w-full h-fit flex items-center py-10 justify-start flex-col bg-stone-100 text-black">
+                <div className=' w-1/2 flex flex-col items-center text-center justify-start gap-0 pb-10'>
+                    <h1 className='text-sm font-normal max-w-[540px] opacity-70'>FAQs</h1>
+                    <h1 className='text-3xl font-medium max-w-[540px]'>Common Questions</h1>
+                    <h1 className='text-base font-normal max-w-[540px] opacity-70 pt-1'>If you cannot find the information you are looking for, please contact us for further assistance.</h1>
+                </div>
+                {/* Faqs */}
+                <div className="w-full h-full bg-stone-100 px-10 max-md:px-3 pb-16 flex flex-col items-center justify-start text-dark-text ">
+                    <div className="w-full h-fit flex flex-col items-center justify-start mb-3 max-w-[900px]">
+                        {Faqs.map((item, index) => (
+                            <div
+                                key={item.index}
+                                className=" py-4 px-5 bg-white text-dark-body-color rounded-xl w-full mb-2 flex justify-between items-start gap-5"
+                            >
+                                <div className="flex flex-col items-start justify-start">
+                                    <h1 className="font-normal tracking-tight text-base leading-5 min-h-[30px] w-full flex items-center justify-start">
+                                        {item.question}
+                                    </h1>
+                                    <p
+                                        className={`text-sm text-black/50 leading-5 font-normal transition-all duration-500 ease-in-out overflow-hidden ${activeIndex === index ? "max-h-96" : "max-h-0"
+                                            }`}
+                                    >
+                                        {item.answer}
+                                    </p>
+                                </div>
+                                <button
+                                    onClick={() => toggleAnswer(index)}
+                                    className=" h-[30px] aspect-square rounded-full transition duration-150 active:scale-90 text-black hover:bg-stone-200 flex items-center justify-center   "
+                                >
+                                    <FaCaretDown className="text-[20px] " />
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     )
