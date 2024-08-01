@@ -86,8 +86,8 @@ function Home() {
                             <img loading='lazy' src={CounterScreen} className=" object-cover object-top w-full h-full" />
                         </div>
                         {/* mobile */}
-                        <div className=''>
-                            <img loading='lazy' src={CounterScreenMobile} className=" hidden max-md:flex object-cover object-top" />
+                        <div className='hidden max-md:flex'>
+                            <img loading='lazy' src={CounterScreenMobile} className=" object-cover object-top" />
                         </div>
                     </div>
                 </Reveal>
