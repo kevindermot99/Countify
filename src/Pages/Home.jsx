@@ -27,12 +27,12 @@ function Home() {
                 {/* light */}
                 <div className='absolute top-[-200px] left-[-200px] aspect-square z-10 h-[800px] w-[600px] bg-stone-500/45 rounded-full blur-[130px] '></div>
                 {/* nav */}
-                <div className="min-h-[60px] w-full flex items-center justify-between px-10 py-5 z-20 ">
+                <div className="min-h-[60px] w-full flex items-center justify-between px-10 max-md:px-4 py-5 z-20 ">
                     <Link to={`/`} className="flex items-center justify-start gap-1">
                         <img src={logo} className="h-9" />
-                        <p className="text-2xl font-semibold">Countify</p>
+                        <p className="text-2xl font-semibold max-md:text-xl">Countify</p>
                     </Link>
-                    <div className="flex items-center justify-end gap-8">
+                    <div className="flex items-center justify-end gap-8 max max-md:hidden">
                         <button onClick={() => scrollToFeatures('hero')} className="h-fit select-none rounded-xl text-sm font-normal">
                             Home
                         </button>
@@ -45,7 +45,7 @@ function Home() {
                         <a className="h-fit select-none rounded-xl text-sm font-normal" target='_blank' href="https://docs.google.com/forms/d/e/1FAIpQLSdkHgxQlSd-Y9M7GHH_QSyhRhkBgy6zzWcKK7VdSC53r9vaVA/viewform?usp=pp_url">Support</a>
                     </div>
                     <div className="flex items-center justify-end gap-5">
-                        <Link to={'/app/counter'} className="h-fit select-none min-w-[100px] rounded-xl text-base font-medium px-5 flex items-center gap-1 transition active:scale-95">
+                        <Link to={'/app/counter'} className="h-fit select-none min-w-[100px] rounded-xl max-md:text-sm text-base font-medium px-5 max-md:px-0 flex items-center gap-1 transition active:scale-95">
                             Open Countify
                             <FiArrowRight />
                         </Link>
