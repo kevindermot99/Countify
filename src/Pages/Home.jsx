@@ -4,6 +4,7 @@ import { MdOutlineFileUpload } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import CounterScreen from '../assets/countify-counter.png'
+import CounterScreenMobile from '../assets/countify-counter-mobile.png'
 import { FiArrowRight } from "react-icons/fi";
 import { FaCaretDown } from "react-icons/fa6";
 import { Faqs } from '../content/data'
@@ -21,7 +22,7 @@ function Home() {
     };
 
     return (
-        <div className="w-full h-fit flex flex-col items-start justify-start relative text-white bg-black">
+        <div className="w-full h-fit flex flex-col items-start justify-start relative text-white bg-white">
             {/* hero */}
             <div id='hero' className="flex items-center justify-start flex-col bg-black text-white relative w-full h-fit overflow-clip">
                 {/* light */}
@@ -61,16 +62,18 @@ function Home() {
                             <FiArrowRight className='text-xl' />
                         </Link>
                     </div>
-                    {/*  */}
-                    <img src={CounterScreen} className=" max-w-[900px] min-w-[900px] max-md:min-w-[200px] min-h-[500px] object-cover object-top bg-white rounded-t-xl ring-[8px] ring-stone-400/15" />
+                    {/* Pc */}
+                    <img src={CounterScreen} className=" max-md:hidden lg:max-w-[900px] bg-white rounded-t-xl ring-[8px] ring-stone-400/15" />
+                    {/* mobile */}
+                    <img src={CounterScreenMobile} className=" hidden max-md:flex object-cover object-top" />
                 </div>
             </div>
             {/* features */}
-            <div id='features' className='w-full h-fit min-h-[400px] bg-white text-black flex items-center justify-center max-lg:flex-col py-20 px-20 max-lg:px-4 max-md:px-4'>
-                <div className=' w-1/2 max-lg:w-full max-lg:text-center flex flex-col items-start justify-start max-lg:items-center max-lg:pb-10 gap-2'>
-                    <h1 className='text-sm font-normal max-w-[540px] opacity-70 max-md:max-w-full '>Key Features</h1>
-                    <h1 className='text-3xl font-medium max-w-[540px] max-md:max-w-full max-lg:text-xl '>All-in-One Counting: Words, Characters, Lines, Sentences, and Whitespaces, all for free.</h1>
-                    <h1 className='text-base font-normal max-w-[540px] opacity-70 pt-3 max-md:max-w-full max-lg:text-sm max-lg:pt-0 '>Easily get comprehensive counts for your text with our all-in-one tool. Perfect for analyzing paragraphs, essays, and more.</h1>
+            <div id='features' className='w-full h-fit min-h-[400px] bg-white text-black flex items-center justify-center max-lg:flex-col py-20 max-md:py-10 px-20 max-lg:px-4 max-md:px-4 max-w-[1200px] mx-auto'>
+                <div className=' w-1/2 max-lg:w-full max-lg:text-center flex flex-col items-end justify-start max-lg:items-center max-lg:pb-10 gap-2'>
+                    <h1 className='text-sm font-normal max-w-[540px] opacity-70 max-md:max-w-full text-left w-full '>Key Features</h1>
+                    <h1 className='text-3xl font-medium max-w-[540px] max-md:max-w-full max-lg:text-xl text-left w-full '>All-in-One Counting: Words, Characters, Lines, Sentences, and Whitespaces, all for free.</h1>
+                    <h1 className='text-base font-normal max-w-[540px] opacity-70 pt-3 max-md:max-w-full max-lg:text-sm max-lg:pt-0 text-left w-full '>Easily get comprehensive counts for your text with our all-in-one tool. Perfect for analyzing paragraphs, essays, and more.</h1>
                 </div>
                 <div className='w-1/2 max-lg:w-full max-lg:text-center flex items-start justify-center flex-col gap-2'>
                     <div className='p-3 rounded-2xl bg-stone-100 flex items-start justify-start gap-3'>
@@ -90,11 +93,11 @@ function Home() {
             </div>
  
             {/* Faqs */}
-            <div id='faqs' className="w-full h-fit flex items-center pt-10 justify-start flex-col bg-stone-100 text-black">
-                <div className=' w-1/2 max-lg:w-full max-lg:text-center flex flex-col items-start justify-start max-lg:items-center max-lg:pb-10 gap-2 px-4'>
+            <div id='faqs' className="w-full h-fit flex items-center pt-10 justify-start flex-col bg-stone-100 text-black max-w-[1200px] mx-auto">
+                <div className=' w-1/2 max-lg:w-full text-center flex flex-col justify-start items-center pb-10 gap-2 px-4'>
                     <h1 className='text-sm font-normal max-w-[540px] opacity-70 max-md:max-w-full '>FAQs</h1>
                     <h1 className='text-3xl font-medium max-w-[540px] max-md:max-w-full max-lg:text-xl '>Common Questions</h1>
-                    <h1 className='text-base font-normal max-w-[540px] opacity-70 pt-3 max-md:max-w-full max-lg:text-sm max-lg:pt-0 '>If you cannot find the information you are looking for, please contact us for further assistance.</h1>
+                    <h1 className='text-base font-normal max-w-[540px] opacity-70 max-md:max-w-full max-lg:text-sm '>If you cannot find the information you are looking for, please contact us for further assistance.</h1>
                 </div>
                 {/* Faqs */}
                 <div className="w-full h-full bg-stone-100 px-10 max-md:px-3 pb-5 flex flex-col items-center justify-start text-dark-text ">
