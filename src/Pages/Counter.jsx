@@ -3,7 +3,7 @@ import { SiPanasonic } from "react-icons/si";
 import { Link, useLocation } from "react-router-dom";
 import logo from '../assets/logo.png'
 import { BsInfoCircle, BsUpload } from "react-icons/bs";
-import pdfToText from 'react-pdftotext'
+import pdfToText from "react-pdftotext";
 import { LuUpload } from "react-icons/lu";
 import { MdOutlineFileUpload } from "react-icons/md";
 import { AiOutlineClose } from "react-icons/ai";
@@ -27,14 +27,11 @@ function Counter() {
   }, [location])
 
   function extractText(event) {
-    const file = event.target.files[0]
+    const file = event.target.files[0];
     pdfToText(file)
-      .then(text => setText(text))
-      .catch(error => console.error("Failed to extract text from pdf"))
-
-      // console.log(text)
+      .then((text) => setText(text))
+      .catch((error) => console.error("Failed to extract text from pdf"));
   }
-
 
   const submitText = (e) => {
     const resultSection = document.getElementById('result-section')
@@ -177,12 +174,12 @@ function Counter() {
                 </button>
               </div>
             </form>
-            
+
           </div>
           {/* footer */}
           <div className="mt-5 w-full text-sm py-9 text-black/40 flex items-center justify-center flex-wrap text-center px-4 max-md:mt-0">
-              Countify does not store your data. By using this tool, you agree to our <Link to={'/app/terms of service'} className="hover:underline text-black/70 pl-1">Terms of Service</Link>
-            </div>
+            Countify does not store your data. By using this tool, you agree to our <Link to={'/app/terms of service'} className="hover:underline text-black/70 pl-1">Terms of Service</Link>
+          </div>
         </div>
       }
     </>
